@@ -64,7 +64,6 @@
     <Chart ComponentName="chartDashboardItem2" Name="Chart with enabled scale breaks" DataSource="dashboardExcelDataSource1">
       <CustomProperties>
         <ScaleBreak>True</ScaleBreak>
-        <ConstantLine>_False_0</ConstantLine>
       </CustomProperties>
       <DataItems>
         <Measure DataMember="Extended Price" Name="Total Sales" DefaultId="DataItem1" />

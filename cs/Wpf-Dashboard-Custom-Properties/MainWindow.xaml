@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Wpf_Dashboard_Custom_Properties"
         xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="WPF Dashboard Control - Custom Properties" Height="768" Width="1366">
     
     <Grid>
         <dxdash:DashboardControl x:Name="dashboardControl">
