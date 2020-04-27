@@ -1,0 +1,25 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+                    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+                    xmlns:dxdash="http://schemas.devexpress.com/winfx/2008/xaml/dashboard"
+                    xmlns:dxdasht="http://schemas.devexpress.com/winfx/2008/xaml/dashboard/themekeys"
+                    xmlns:local="clr-namespace:Wpf_Dashboard_Custom_Properties">
+
+    <local:ShowDashboardDescriptionCommandConverter x:Key="ShowDashboardDescriptionCommandConverter"/>
+    <local:DashboardDescriptionButtonVisibleConverter x:Key="DashboardDescriptionButtonVisibleConverter"/>
+    <DataTemplate x:Key="titleCustomizationsTemplate">
+        <ItemsControl>
+            <dxb:InsertAction ContainerName="{x:Static dxdasht:DefaultBarItemNames.DashboardTitle_Toolbar}" Index="0">
+                <dxb:InsertAction.Element>
+                    <dxb:BarButtonItem AllowGlyphTheming="True" Glyph="{dx:SvgImageSource Uri=../../Images/Description.svg}" ToolTip="Show Description"
+                                       Command="{Binding Converter={StaticResource ShowDashboardDescriptionCommandConverter}}"
+                                       CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dxdash:DashboardControl}}, Path=Dashboard}"
+                                       IsVisible="{Binding Converter={StaticResource DashboardDescriptionButtonVisibleConverter}, 
+                                                   RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dxdash:DashboardControl}}, Path=Dashboard}">
+                    </dxb:BarButtonItem>
+                </dxb:InsertAction.Element>
+            </dxb:InsertAction>
+        </ItemsControl>
+    </DataTemplate>
+</ResourceDictionary>
