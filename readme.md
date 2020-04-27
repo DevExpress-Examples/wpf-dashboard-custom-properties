@@ -29,7 +29,7 @@ This module contains three custom properties for a Chart dashboard item.
 #### Chart Scale Break
 The ScaleBreak class displays scale breaks for the Chart dashboard item if the Chart's custom property is _true_.
 
-#### Chart Line Stye
+#### Chart Line Style
 The LineStyle class changes the line style according to the custom property value. In this example, it is a _dot_.
 
 #### Chart Constant Line
