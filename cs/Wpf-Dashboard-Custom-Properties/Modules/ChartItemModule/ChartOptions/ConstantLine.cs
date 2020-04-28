@@ -40,10 +40,11 @@ namespace Wpf_Dashboard_Custom_Properties {
             string propertyValue = chartItem.CustomProperties[ChartItemModule.ConstantLinePropertyName];
             var moduleData = ConstantLineValueModuleData.GetDataFromString(propertyValue);
             var pane = chartItem.Panes.FirstOrDefault(x => x.Name == moduleData.PaneName);
-            ConstantLine line = new ConstantLine();
-            if(pane != null) {
+            ConstantLineCollection constantLines = new ConstantLineCollection();
+            if (pane != null) {
                 ChartSeries dashboardSeries = pane.Series.FirstOrDefault(s => s.PlotOnSecondaryAxis == moduleData.IsSecondaryAxis);
-                if(dashboardSeries != null) {
+                if (dashboardSeries != null) {
+                    ConstantLine line = new ConstantLine();
                     line.Value = moduleData.Value;
                     Color constantLineColor = Color.FromArgb(255, 0, 128, 0);
                     line.Brush = new SolidColorBrush(constantLineColor);
@@ -53,9 +54,10 @@ namespace Wpf_Dashboard_Custom_Properties {
                     line.Title = new ConstantLineTitle();
                     line.Title.Content = "Value: " + moduleData.Value;
                     line.Title.Foreground = new SolidColorBrush(constantLineColor);
+                    constantLines.Add(line);
                 }
             }
-            return new ConstantLineCollection() { line };
+            return constantLines;
         }
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture) {
             throw new NotImplementedException();
