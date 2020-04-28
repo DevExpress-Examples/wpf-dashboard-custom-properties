@@ -12,7 +12,7 @@ The example shows how to add custom properties to the WPF Dashboard Control.
 
 Custom properties are stored in a CustomProperties collection in a structured format. Each custom property in this collection contains the custom property's metadata.
 
-To customize the underlying control, you can change the dashboard item's style according to the custom property value.
+To customize the underlying control, you can change the dashboard item's style and template according to the custom property value.
 
 The example contains the following custom properties organized into modules:
 
