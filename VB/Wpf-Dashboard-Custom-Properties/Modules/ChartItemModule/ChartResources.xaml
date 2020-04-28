@@ -1,0 +1,55 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Wpf_Dashboard_Custom_Properties"
+                    xmlns:dxdash="http://schemas.devexpress.com/winfx/2008/xaml/dashboard"
+                    xmlns:dxdasht="http://schemas.devexpress.com/winfx/2008/xaml/dashboard/themekeys"
+                    xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/charts">
+
+    <local:ConstantLinesConverter x:Key="ConstantLinesConverter" />
+    <local:ScaleBreaksConverter x:Key="ScaleBreaksConverter" />
+    <local:LineStyleConverter x:Key="LineStyleConverter" />
+    <DataTemplate x:Key="chartTemplate">
+        <dxc:ChartControl Style="{Binding Path=(dxdash:DashboardLayoutItem.ViewStyle), RelativeSource={RelativeSource TemplatedParent}}">
+            <dxc:XYDiagram2D>
+                <dxc:XYDiagram2D.SecondaryAxisYItemTemplate>
+                    <DataTemplate>
+                        <dxc:SecondaryAxisY2D Style="{Binding Path=(dxdash:ChartDashboardLayoutItem.SecondaryAxisYStyle), RelativeSource={RelativeSource Self}}">
+                            <dxc:SecondaryAxisY2D.ConstantLineInFrontItemsSource>
+                                <MultiBinding Converter="{StaticResource ConstantLinesConverter}">
+                                    <Binding RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType={x:Type dxc:ChartControl}}" Path="DataContext.DashboardItemName"/>
+                                    <Binding RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType={x:Type dxc:ChartControl}}" Path="DataContext.DashboardControlProvider"/>
+                                </MultiBinding>
+                            </dxc:SecondaryAxisY2D.ConstantLineInFrontItemsSource>
+                            <dxc:SecondaryAxisY2D.AutoScaleBreaks>
+                                <MultiBinding Converter="{StaticResource ScaleBreaksConverter}">
+                                    <Binding RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType={x:Type dxc:ChartControl}}" Path="DataContext.DashboardItemName"/>
+                                    <Binding RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType={x:Type dxc:ChartControl}}" Path="DataContext.DashboardControlProvider"/>
+                                </MultiBinding>
+                            </dxc:SecondaryAxisY2D.AutoScaleBreaks>
+                        </dxc:SecondaryAxisY2D>
+                    </DataTemplate>
+                </dxc:XYDiagram2D.SecondaryAxisYItemTemplate>
+                <dxc:XYDiagram2D.SeriesItemTemplateSelector>
+                    <dxdasht:SeriesTemplateSelector>
+                        <dxdasht:SeriesTemplateSelector.LineSeriesTemplate>
+                            <DataTemplate>
+                                <dxc:LineSeries2D Style="{Binding Path=(dxdash:ChartDashboardLayoutItem.LineSeriesStyle), RelativeSource={RelativeSource Self}}">
+                                    <dxc:LineSeries2D.LineStyle>
+                                        <MultiBinding Converter="{StaticResource LineStyleConverter}">
+                                            <Binding RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType={x:Type dxc:ChartControl}}" Path="DataContext.DashboardItemName"/>
+                                            <Binding RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType={x:Type dxc:ChartControl}}" Path="DataContext.DashboardControlProvider"/>
+                                            <Binding Path="ValueDataMember"/>
+                                        </MultiBinding>
+                                    </dxc:LineSeries2D.LineStyle>
+                                </dxc:LineSeries2D>
+                            </DataTemplate>
+                        </dxdasht:SeriesTemplateSelector.LineSeriesTemplate>
+                    </dxdasht:SeriesTemplateSelector>
+                </dxc:XYDiagram2D.SeriesItemTemplateSelector>
+            </dxc:XYDiagram2D>
+        </dxc:ChartControl>
+    </DataTemplate>
+    <Style x:Key="chartStyle" TargetType="dxdash:ChartDashboardLayoutItem">
+        <Setter Property="ContentTemplate" Value="{StaticResource chartTemplate}" />
+    </Style>
+</ResourceDictionary>
