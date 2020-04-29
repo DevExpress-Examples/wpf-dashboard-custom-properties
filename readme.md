@@ -36,5 +36,5 @@ The LineStyle class changes the line style according to the custom property valu
 The ConstantLine class allows you to display a constant line for the selected Chart item. The property contains information about a pane, axis type (primary or secondary), and a value.
 
 ## See Also
-- [WinForms Dashboard - Custom Properties](https://github.com/DevExpress-Examples/winforms-dashboard-custom-properties)
-- [ASP.NET MVC Dashboard - Custom Properties](https://github.com/DevExpress-Examples/asp-net-mvc-dashboard-custom-properties-sample)
+- [WinForms Dashboard Designer - Custom Properties](https://github.com/DevExpress-Examples/winforms-dashboard-custom-properties)
+- [ASP.NET MVC Dashboard Control - Custom Properties](https://github.com/DevExpress-Examples/asp-net-mvc-dashboard-custom-properties-sample)
