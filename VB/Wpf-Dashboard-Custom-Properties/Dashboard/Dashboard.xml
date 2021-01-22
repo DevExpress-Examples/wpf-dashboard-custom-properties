@@ -115,7 +115,7 @@
         </Pane>
       </Panes>
     </Chart>
-    <Grid ComponentName="gridDashboardItem1" Name="Grid with a custom description" DataSource="dashboardExcelDataSource1">
+    <Grid ComponentName="gridDashboardItem1" Name="Grid with pinned columns and a custom description" DataSource="dashboardExcelDataSource1">
       <CustomProperties>
         <Description>This is a custom description for the dashboard item.</Description>
       </CustomProperties>
@@ -125,8 +125,16 @@
           <NumericFormat FormatType="Currency" Precision="0" CustomFormatString="" />
         </Measure>
         <Measure DataMember="Quantity" DefaultId="DataItem2" />
+        <Dimension DataMember="Sales Person" DefaultId="DataItem3" />
+        <Measure DataMember="Discount" DefaultId="DataItem4" />
       </DataItems>
       <GridColumns>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem3" />
+          <CustomProperties>
+            <FixedColumns>True</FixedColumns>
+          </CustomProperties>
+        </GridDimensionColumn>
         <GridDimensionColumn Name="Product">
           <Dimension DefaultId="DataItem0" />
         </GridDimensionColumn>
@@ -136,7 +144,11 @@
         <GridMeasureColumn Name="Quantity">
           <Measure DefaultId="DataItem2" />
         </GridMeasureColumn>
+        <GridMeasureColumn Name="Discount">
+          <Measure DefaultId="DataItem4" />
+        </GridMeasureColumn>
       </GridColumns>
+      <GridOptions AllowGridCellMerge="true" ColumnWidthMode="AutoFitToContents" />
     </Grid>
   </Items>
   <LayoutTree>

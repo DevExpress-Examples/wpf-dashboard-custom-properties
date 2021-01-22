@@ -22,6 +22,10 @@ This module enables you to display a dashboard description. The dashboard descri
 ### ItemDescriptionModule
 This module enables you to display a description for a dashboard item. The description is displayed when you click the info button in the dashboard item caption.
 
+### GridFixedColumnModule
+
+This module pinned columns in a Grid dashboard item.
+
 ### ChartItemModule
 
 This module contains three custom properties for a Chart dashboard item.

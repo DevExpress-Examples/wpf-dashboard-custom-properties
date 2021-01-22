@@ -12,6 +12,7 @@
         <dxdash:DashboardControl x:Name="dashboardControl">
             <dxmvvm:Interaction.Behaviors>
                 <local:ChartItemModule/>
+                <local:GridFixedColumnModule/>
                 <local:ItemDescriptionModule/>
                 <local:DashboardDescriptionModule/>
             </dxmvvm:Interaction.Behaviors>
