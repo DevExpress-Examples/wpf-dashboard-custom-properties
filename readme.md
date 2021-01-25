@@ -1,6 +1,6 @@
 *Files to look at*:
-- [Modules](./CS/Wpf-Dashboard-Custom-Properties/Modules)
-- [MainWindow.xaml](./CS/Wpf-Dashboard-Custom-Properties/MainWindow.xaml)
+- [Modules](./cs/Wpf-Dashboard-Custom-Properties/Modules)
+- [MainWindow.xaml](./cs/Wpf-Dashboard-Custom-Properties/MainWindow.xaml)
 
 # WPF Dashboard Control - Custom Properties
 
