@@ -2,7 +2,7 @@
 - [Modules](./cs/Wpf-Dashboard-Custom-Properties/Modules)
 - [MainWindow.xaml](./cs/Wpf-Dashboard-Custom-Properties/MainWindow.xaml)
 
-# WPF Dashboard Control - Custom Properties
+# Dashboard for WPF - Custom Properties
 
 The example shows how to add custom properties to the WPF Dashboard Control. 
 
