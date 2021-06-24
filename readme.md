@@ -52,6 +52,11 @@ This module contains three custom properties for a Chart dashboard item:
 
     The ConstantLine class allows you to display a constant line for the selected Chart item. The property contains information about a pane, axis type (primary or secondary), and a value.
 
+## Documentation
+
+- [Customization](https://docs.devexpress.com/Dashboard/401789/wpf-viewer/customization)
+- [A List of Styles and Templates](https://docs.devexpress.com/Dashboard/400142/wpf-viewer/a-list-of-styles-and-templates)
+
 ## More Examples
 - [ASP.NET MVC Dashboard Control - Custom Properties](https://github.com/DevExpress-Examples/asp-net-mvc-dashboard-custom-properties-sample)
 - [ASP.NET Web Forms Dashboard Control - Custom Properties](https://github.com/DevExpress-Examples/asp-net-web-forms-dashboard-custom-properties-sample)
