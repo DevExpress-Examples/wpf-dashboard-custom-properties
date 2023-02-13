@@ -10,11 +10,9 @@ The example shows how to add custom properties to the WPF Dashboard Control.
 
 ![](images/wpf-dashboard.png)
 
-<!-- default file list -->
-## Files to look at
+## Files to Review
 - [Modules](./cs/Wpf-Dashboard-Custom-Properties/Modules)
 - [MainWindow.xaml](./cs/Wpf-Dashboard-Custom-Properties/MainWindow.xaml)
-<!-- default file list end -->
 
 ## Overview
 
