@@ -11,10 +11,6 @@ The example shows how to add custom properties to the WPF Dashboard Control.
 
 ![](images/wpf-dashboard.png)
 
-## Files to Review
-- [Modules](./cs/Wpf-Dashboard-Custom-Properties/Modules)
-- [MainWindow.xaml](./cs/Wpf-Dashboard-Custom-Properties/MainWindow.xaml)
-
 ## Overview
 
 Custom properties are stored in a CustomProperties collection in a structured format. Each custom property in this collection contains the custom property's metadata.
@@ -58,6 +54,11 @@ This module contains three custom properties for a Chart dashboard item:
 - **Chart Constant Line**
 
     The ConstantLine class allows you to display a constant line for the selected Chart item. The property contains information about a pane, axis type (primary or secondary), and a value.
+
+## Files to Review
+
+- [Modules](./CS/Wpf-Dashboard-Custom-Properties/Modules)
+- [MainWindow.xaml](./CS/Wpf-Dashboard-Custom-Properties/MainWindow.xaml)
 
 ## Documentation
 
